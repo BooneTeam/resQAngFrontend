@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="webstormProjectsApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <header class="centered-navigation" role="banner">
+      <div class="centered-navigation-wrapper">
+        <a href="javascript:void(0)" class="mobile-logo">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt="Logo image">
+        </a>
+        <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
+        <nav role="navigation">
+          <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
+            <button type="button" class="js-menu-trigger sliding-menu-button">
+              <i class="fa fa-bars"></i>
+            </button>
+            <li class="nav-link logo">
+              <a href="javascript:void(0)" class="logo">
+                <h4 class="logo-name">ResQ.io</h4>
+              </a>
+            </li>
+            <li class="nav-link"><a href="javascript:void(0)">Login</a></li>
+            <li class="nav-link"><a href="javascript:void(0)">Sign up</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <nav class="js-menu sliding-menu-content">
+      <div id='sign-up-in-buttons'>
+        <button>SIGN UP</button>
+        <button>LOG IN</button>
+      </div>
+      <ul>
+        <li><a href="javascript:void(0)">HOME</a></li>
+        <li><a href="javascript:void(0)">CITIES</a></li>
+        <li><a href="javascript:void(0)">BE A RES-Q-ER</a></li>
+      </ul>
+      <ul>
+        <li><a href="javascript:void(0)">FEATURES</a></li>
+        <li><a href="javascript:void(0)">WHAT WE DO</a></li>
+        <li><a href="javascript:void(0)">SAFETY</a></li>
+        <li><a href="javascript:void(0)">HELP</a></li>
+        <li><a href="javascript:void(0)">ABOUT US</a></li>
+        <li><a href="javascript:void(0)">CAREERS</a></li>
+        <li><a href="javascript:void(0)">LEGAL</a></li>
+      </ul>
+      <ul>
+        <li>
+          LANGUAGE
+          <button>ENGLISH</button>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="js-menu-screen menu-screen"></div>
+
+
+
+    <div ng-view=""></div>
+
+      <div class="footer">
+        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+      </div>
+    </div>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/services.js"></script>
+        <script src="scripts/geo_location.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
