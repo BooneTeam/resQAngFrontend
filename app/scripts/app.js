@@ -20,7 +20,8 @@ angular
     'ngTouch',
     'uiGmapgoogle-maps',
     'webstormProjectsAppWieners',
-    'geolocation'
+    'geolocation',
+    'webstormProjectsApp.main_directives'
   ])
   .config(function ($routeProvider) {
     $routeProvider

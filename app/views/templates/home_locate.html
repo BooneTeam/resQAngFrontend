@@ -1,9 +1,10 @@
 <h1>Locate A ResQuer</h1>
 <p>Tell us where you are.</p>
 <form novalidate class="css-form">
-  Address: <input type="text" ng-model="user.address" required /><br />
-  City: <input type="email" ng-model="user.city" required /><br />
-  State: <input type="email" ng-model="user.state" required /><br />
+  <input type="submit" ng-click="geo(user)"value="Find Me"/>
+  Address: <input type="text" ng-model="fulfillment.address" required /><br />
+  City: <input type="email" ng-model="fulfillment.city" required /><br />
+  State: <input type="email" ng-model="fulfillment.state" required /><br />
   <input type="radio" ng-model="fulfillment.type" value="jump" />I need a jump<br />
   <input type="radio" ng-model="fulfillment.type" value="tire" />I need my tire changed<br />
   <input type="radio" ng-model="fulfillment.type" value="gas" />I need some gas<br />
