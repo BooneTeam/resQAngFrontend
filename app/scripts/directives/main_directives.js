@@ -22,13 +22,29 @@ angular.module("webstormProjectsApp.main_directives",[])
   .directive('homeBecome',function(){
     return {
       restrict: "AE",
-      templateUrl:"./views/templates/home_become.html"
+      scope:{
+        userType:'@'
+      },
+      templateUrl:"./views/templates/home_become.html",
+      link: function(scope){
+
+        //what does this do? Learn!
+      }
     };
   })
   .directive('homeLocate',function(){
     return {
       restrict: "AE",
       templateUrl:"./views/templates/home_locate.html"
+    };
+  })
+  .directive('signIn',function(){
+    return{
+      restrict:"AE",
+      scope:{
+        userType:'@'
+      },
+      templateUrl:"./views/templates/sign_in_form.html"
     };
   })
 ;

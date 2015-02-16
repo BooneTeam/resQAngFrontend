@@ -1,5 +1,5 @@
 <div class="device">
-<div home-become ng-show="home.smallHome == 'become'"></div>
-<div home-locate ng-show="home.smallHome == 'locate'"></div>
-<div home-text   ng-show="home.smallHome == 'start'"></div>
+  {{mainCtrl.home.smallHome}}
+<div home-locate ng-show="mainCtrl.home.smallHome == 'locate'" class="locate-phone-web-container"></div>
+<div home-text   ng-show="mainCtrl.home.smallHome == 'start'"></div>
 </div>

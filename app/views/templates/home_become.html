@@ -1,12 +1,21 @@
-<h1>Become A ResQuer</h1>
-<p>Fill out the form below to get started.</p>
-<form novalidate class="css-form">
-  First Name:    <input type="text" ng-model="user.first_name" required /><br />
-  Last Name:    <input type="text" ng-model="user.last_name" required /><br />
-  E-mail:  <input type="email" ng-model="user.email" required /><br />
-  Address: <input type="text" ng-model="user.address" required /><br />
-  City:    <input type="text" ng-model="user.city" required /><br />
-  State:   <input type="text" ng-model="user.state" required /><br />
-  <input type="submit" ng-click="update(user)" value="Submit" />
-  {{user}}
-</form>
+<div>
+  <h1>JOIN RESQUE AS A {{userType | uppercase}}</h1>
+
+  <p>Fill out the form below to get started.</p>
+  <!--<fieldset>-->
+    <div class="wrapper">
+    <form novalidate class='form' name="signUpForm" class="new-user-sign-up-form" ng-controller="FormCtrl"
+          ng-submit="createFulfiller(user)">
+      <input type="hidden" ng-model="user.type" value='{{userType}}'>
+      <input type="text" ng-model="user.first_name" placeholder="First Name"required/>
+      <input type="text" ng-model="user.last_name" placeholder="Last Name" required/><br/>
+      <input type="email" ng-model="user.email" placeholder="E-mail" required/><br/>
+      <input type="password" ng-model="user.password" placeholder="Password" required/><br/>
+      <input type="password" ng-model="user.password_confirmation" placeholder="Password Confirmation" required/><br/>
+      <input type="text" ng-model="user.address" placeholder="Address" required/><br/>
+      <input type="text" ng-model="user.city" placeholder="City" required/><br/>
+      <input type="text" ng-model="user.state" placeholder="State" required/><br/>
+      <input type="submit" value="Submit"/>
+    </form>
+  <!--</fieldset>-->
+</div>

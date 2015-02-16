@@ -20,6 +20,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+     <div ng-controller="NavController as navCtrl">
     <header class="centered-navigation" role="banner">
       <div class="centered-navigation-wrapper">
         <a href="javascript:void(0)" class="mobile-logo">
@@ -28,21 +29,25 @@
         <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
         <nav role="navigation">
           <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
-            <button type="button" class="js-menu-trigger sliding-menu-button">
-              <i class="fa fa-bars"></i>
+            <div id="left-buoy-container">
+              <img class="buoy" ng-src="./images/lifebuoy.png">
+              <li class="nav-link logo">
+                <a href="javascript:void(0)" class="logo" ng-click="navCtrl.home.userNav = 'start'">
+                  <h4 class="logo-name">ResQ.io</h4>
+                </a>
+              </li>
+            </div>
+            <button type="button" class="js-menu-trigger sliding-menu-button" ng-click="showJsNav = !showJsNav">
+              <i class="fa fa-bars" ></i>
             </button>
-            <li class="nav-link logo">
-              <a href="javascript:void(0)" class="logo">
-                <h4 class="logo-name">ResQ.io</h4>
-              </a>
-            </li>
-            <li class="nav-link"><a href="javascript:void(0)">Login</a></li>
-            <li class="nav-link"><a href="javascript:void(0)">Sign up</a></li>
+            {{showJsNav}}
+            <li class="nav-link"><button href="javascript:void(0)" ng-click="navCtrl.home.userNav = 'logIn'">Log In To ResQ</button></li>
+            <li class="nav-link"><button href="javascript:void(0)" ng-click="navCtrl.home.userNav = 'signUp'">Sign up</button></li>
           </ul>
         </nav>
       </div>
     </header>
-    <nav class="js-menu sliding-menu-content">
+    <nav class="js-menu sliding-menu-content is-visible" ng-show="showJsNav">
       <div id='sign-up-in-buttons'>
         <button>SIGN UP</button>
         <button>LOG IN</button>
@@ -68,9 +73,9 @@
         </li>
       </ul>
     </nav>
-
+    {{showJsNav}}
     <div class="js-menu-screen menu-screen"></div>
-
+    </div>
 
 
     <div ng-view=""></div>
@@ -106,6 +111,9 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/services/services.js"></script>
+        <script src="scripts/services/customer.services.js"></script>
+        <script src="scripts/services/fulfiller.services.js"></script>
+        <script src="scripts/services/user.services.js"></script>
         <script src="scripts/directives/main_directives.js"></script>
         <script src="scripts/geo_location.js"></script>
         <script src="scripts/app.js"></script>

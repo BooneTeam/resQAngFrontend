@@ -1,12 +1,17 @@
-<h1>Locate A ResQuer</h1>
-<p>Tell us where you are.</p>
-<form novalidate class="css-form">
-  <input type="submit" ng-click="geo(user)"value="Find Me"/>
-  Address: <input type="text" ng-model="fulfillment.address" required /><br />
-  City: <input type="email" ng-model="fulfillment.city" required /><br />
-  State: <input type="email" ng-model="fulfillment.state" required /><br />
-  <input type="radio" ng-model="fulfillment.type" value="jump" />I need a jump<br />
-  <input type="radio" ng-model="fulfillment.type" value="tire" />I need my tire changed<br />
-  <input type="radio" ng-model="fulfillment.type" value="gas" />I need some gas<br />
-  <input type="submit" ng-click="update(fulfillment)" value="Submit" />
-</form>
+<div class="locate-phone-web">
+  <h1>Locate A ResQuer</h1>
+
+  <p>Tell us where you are.</p>
+
+  <form novalidate class="find-me-form">
+    <input type="submit" ng-click="geo(user)" value="Find Me"/>
+  </form>
+  <form novalidate class="fulfillment-request-form">
+    <input type="text" ng-model="fulfillment.address" placeholder="Address" required/>
+    <input type="email" ng-model="fulfillment.city" placeholder="City" required/>
+    <input type="email" ng-model="fulfillment.state" placeholder="State" required/>
+    <p>Please choose type of service</p>
+    <select ng-options="item.label for item in fulfillmentTypes track by item.id" ng-model="selectedFulfillment"/>
+    <input type="submit" ng-click="update(fulfillment)" value="Submit"/>
+  </form>
+</div>

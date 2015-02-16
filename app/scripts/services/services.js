@@ -1,7 +1,8 @@
 "use strict";
-angular
-  .module('webstormProjectsAppWieners',[])
-.factory('UpdateService', ['$q','$http',function($q,$http){
+
+var app = angular.module('webstormProjectsApp.services',[]);
+
+app.factory('UpdateService', ['$q','$http',function($q,$http){
     var service = {
       user: function(user){
         var d = $q.defer()
@@ -11,12 +12,10 @@ angular
           }).error(function(data){
             d.reject(data);
           })
-        //user.saved = true;
-        //var poo = $q.defer(),
-        //  returnUser = user;
-
         return d.promise;
       }
     }
     return service;
   }]);
+
+

@@ -1,0 +1,27 @@
+<div class="sign-in-form">
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <div class="wrapper">
+    <h1>Register For An Account</h1>
+    <p>To sign-up for a free basic account please provide us with some basic information using
+      the contact form below. Please use valid credentials.</p>
+    <form class="form" name='signInForm' ng-submit="logIn(user)" ng-controller="SignInController" ng-switch on="selection">
+    <h1>{{userType | uppercase}} LOG IN</h1>
+
+      <input type="hidden"   ng-model="user.type" ng-init='user.type = userType'>
+      <input type="text" ng-model="user.username" class="name" placeholder="UserName" ng-click="selection = 'username'">
+      <div class="animate-switch" ng-switch-when="username">
+        <p class="name-help">Please enter your first and last name.</p>
+      </div>
+      <input type="password" ng-model="user.password"  class="email" placeholder="Password" ng-click="selection = 'password'">
+      <div class="animate-switch" ng-switch-when="password">
+        <p class="email-help">Please enter your current email address.</p>
+      </div>
+      <input type="submit" class="submit" value="Submit">
+    </form>
+  </div>
+  <p class="optimize">
+    Optimized for Chrome & Firefox!
+  </p>
+
+</div>

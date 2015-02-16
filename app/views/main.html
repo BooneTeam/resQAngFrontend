@@ -1,36 +1,60 @@
-
-
-<div class="hero">
+<div class="hero-bg"></div>
+<div class="hero" ng-controller="MainController as mainCtrl">
   <div class="hero-inner">
-    <a href="" class="hero-logo"><img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png
-" alt="Logo Image"></a>
-    <div class="hero-copy">
-      <h1>ResQ</h1>
-      <p>It's no fun getting a flat tire or walking to your car after a long days work to find out the batteries dead.</p>
-      <h2>We're here to help. </h2>
-      <p>Send a request out to fellow citizen near you and they'll come to the ResQ with a jump,tire change, or a few gallons of gas.</p>
-      <p>As little as $20</p>
+    <!--<div sign-in class='sign-in-form' user-type='customer' ng-show="mainCtrl.home.userNav == 'logInCustomer'"></div>-->
+    <!--<div sign-in class='sign-in-form' user-type='responder' ng-show="mainCtrl.home.userNav == 'logInResponder'"></div>-->
+    <div class='hero-copy' ng-show="mainCtrl.home.userNav == 'logIn'">
+      <input type="radio" name="userType" ng-model="login.type" value="customer">Customer
+      <input type="radio" name="userType" ng-model="login.type" value="responder">Responder
+    <div sign-in class='sign-in-form' user-type={{login.type}}></div>
     </div>
-    <button>Learn More</button>
+    <div class="hero-copy" ng-show="mainCtrl.home.userNav == 'start'">
+      <h1>ResQ</h1>
+
+      <p>It's no fun getting a flat tire or walking to your car after a long days work to find out the batteries
+        dead.</p>
+    </div>
+    <div class="hero-copy" ng-show="mainCtrl.home.userNav == 'start'">
+      <div hero-side-left></div>
+    </div>
+
+    <div class="hero-copy" ng-show="mainCtrl.home.userNav == 'signUp'">
+      <input type="radio" name="userType" ng-model="user.type" value="customer">Customer
+      <input type="radio" name="userType" ng-model="user.type" value="responder">Responder
+      <div home-become user-type={{user.type}}></div>
+    </div>
     <div class="device-background">
       <div class="device-text">
-        <div hero-side-left></div>
+        <h1>We're here to help.</h1>
+
+        <p>Send a request out to fellow citizen near you and they'll come to the ResQ with a jump,tire change, or a few
+          gallons of gas.</p>
+
+        <p>As little as $20</p>
+
+        <p>Starting as low as $20.</p>
+
+        <p>No Membership</p>
+
+        <p>No Outrageous Prices</p>
         <ul>
-          <li><button ng-click="home.smallHome ='become'">Become A Res-Q Responder</button></li>
-          <li><button ng-click="home.smallHome ='locate'">Locate A Res-Q Responder</button></li>
-        </ul>
-        <ul>
+          <li>
+            <button ng-click="mainCtrl.home.smallHome ='locate'">Locate A Res-Q Responder</button>
+          </li>
         </ul>
       </div>
       <div hero-side-right></div>
     </div>
   </div>
+  <div id="map_canvas">
+    <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">
+      <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id"
+                      icon="marker.icon">
+      </ui-gmap-marker>
+      <ui-gmap-markers models="fulfillerMarkers" coords="'self'" icon="'fufillers.icon'">
+      </ui-gmap-markers>
+    </ui-gmap-google-map>
+  </div>
 </div>
-<div id="map_canvas">
-  <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">
-    <ui-gmap-markers models="fulfillerMarkers" coords="'self'" icon="'icon'">
-    </ui-gmap-markers>
-  </ui-gmap-google-map>
 
-</div>
 

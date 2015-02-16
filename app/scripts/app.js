@@ -19,9 +19,10 @@ angular
     'ngSanitize',
     'ngTouch',
     'uiGmapgoogle-maps',
-    'webstormProjectsAppWieners',
+    'webstormProjectsApp.services',
+    'user.services',
     'geolocation',
-    'webstormProjectsApp.main_directives'
+    'webstormProjectsApp.main_directives',
   ])
   .config(function ($routeProvider) {
     $routeProvider

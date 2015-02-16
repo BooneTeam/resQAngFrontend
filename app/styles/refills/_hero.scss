@@ -1,3 +1,20 @@
+.hero-bg{
+  $hero-background-top: #7F99BE;
+  $hero-background-bottom: #20392B;
+  $hero-color: white;
+  $gradient-angle: 10deg;
+  $hero-image: '../images/lifebuoy.png';
+  opacity:0.2;
+  @include background(url($hero-image), center no-repeat);
+  //, linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
+  //  background-color: #324766;
+  background-position: top;
+  background-repeat: no-repeat;
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index: -1000;
+}
 .hero {
   ///////////////////////////////////////////////////////////////////////////////////
   $base-border-radius: 3px !default;
@@ -9,13 +26,14 @@
   $hero-background-bottom: #20392B;
   $hero-color: white;
   $gradient-angle: 10deg;
-  $hero-image: 'http://media.econopolis.edge.be/documize/2013/1/20130131_14574_1.png';
-
-  @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
-  background-color: #324766;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
+//  $hero-image: '../images/lifebuoy.png';
+//
+//  @include background(url($hero-image), center no-repeat);
+////, linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
+//  background-color: #324766;
+//  background-position: top;
+//  background-repeat: no-repeat;
+//  background-size: cover;
   padding-bottom: 3em;
 
   .hero-logo img {
@@ -33,7 +51,8 @@
 
     .hero-copy {
       text-align: center;
-
+      @include span-columns(6);
+      margin-right: 0px;
       h1 {
         font-size: 1.6em;
         margin-bottom: 0.5em;
@@ -50,7 +69,7 @@
 
         @include media($large-screen) {
           font-size: 1.1em;
-          max-width: 40%;
+          max-width: 80%;
         }
       }
     }
